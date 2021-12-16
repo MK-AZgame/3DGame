@@ -1,5 +1,8 @@
 //========================================================
+//
 //					エフェクト
+//					AUTHOR:越本愛彪
+//
 //========================================================
 #ifndef _EFFECT_H_
 #define _EFFECT_H_
@@ -9,13 +12,13 @@
 //エフェクトの構造体
 typedef struct
 {
-	D3DXVECTOR3 pos;
-	D3DXVECTOR3 rot;
-	float fRadius;
-	D3DXCOLOR	col;
-	D3DXMATRIX mtxWorld;
-	int nLife;
-	bool bUse;
+	D3DXVECTOR3 pos;										//位置
+	D3DXVECTOR3 rot;										//向き
+	float fRadius;											//半径
+	D3DXCOLOR	col;										//色
+	D3DXMATRIX mtxWorld;									//ワールドマトリックス
+	int nLife;												//エフェクトの寿命
+	bool bUse;												//使っているかどうか
 } Effect;
 
 //プロトタイプ宣言

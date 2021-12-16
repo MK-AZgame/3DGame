@@ -72,7 +72,7 @@ void InitModel(void)
 
 		if (vtx.y <= g_model.vtxMin.y)
 		{
-			g_model.vtxMax.y = vtx.y;
+			g_model.vtxMin.y = vtx.y;
 		}
 
 		if (vtx.z <= g_model.vtxMin.z)

@@ -1,5 +1,8 @@
 //========================================================
+//
 //						カメラ
+//					AUTHOR:越本愛彪
+//
 //========================================================
 #include "camera.h"
 #include "input.h"
@@ -186,7 +189,7 @@ void SetCamera(void)
 		
 	//プロジェクションマトリックスの作成
 	D3DXMatrixPerspectiveFovLH(&g_camera.mtxProjection,
-		D3DXToRadian(90.0f),
+		D3DXToRadian(60.0f),
 		(float)SCREEN_WIDTH / (float)SCREEN_HEIGHT,
 		10.0f,
 		1000.0f);

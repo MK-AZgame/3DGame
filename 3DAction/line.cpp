@@ -47,8 +47,8 @@ void InitLine(void)
 		pVtx[1].nor = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 
 		//頂点カラーの設定
-		pVtx[0].col = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
-		pVtx[1].col = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
+		pVtx[0].col = D3DXCOLOR(1.0f, 0.0f, 0.0f, 1.0f);
+		pVtx[1].col = D3DXCOLOR(1.0f, 0.0f, 0.0f, 1.0f);
 
 		//テクスチャ
 		pVtx[0].tex = D3DXVECTOR2(0.0f, 0.0f);
@@ -102,6 +102,9 @@ void DrawLine(void)
 	//テクスチャの設定
 	pDevice->SetTexture(0, g_pTextureLine);
 
+	//ライトを無効にする
+	pDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
+
 	for (int nCntLine = 0; nCntLine < MAX_LINE; nCntLine++)
 	{
 		if (g_aLine[nCntLine].bUse == true)
@@ -131,6 +134,9 @@ void DrawLine(void)
 		}
 	}
 
+	//カメラを有効に戻す
+	pDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
+
 	pDevice->SetTexture(0, NULL);
 }
 
@@ -158,6 +164,7 @@ void SetLine(D3DXVECTOR3 pos, D3DXVECTOR3 rot, D3DXVECTOR3 startPos, D3DXVECTOR3
 			g_aLine[nCntLine].bUse = true;		//ラインのbUseをtrueに
 			break;
 		}
+		pVtx += 2;
 	}
 
 	//頂点バッファのアンロック

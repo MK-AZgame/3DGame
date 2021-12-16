@@ -1,5 +1,8 @@
 //========================================================
+//
 //					メッシュフィールド
+//					AUTHOR:越本愛彪
+//
 //========================================================
 #include "main.h"
 #include "meshfield.h"
@@ -65,7 +68,7 @@ void InitMeshfield(void)
 			pVtx[g_nCntVtxNum].nor = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 
 			//テクスチャ座標の設定
-			pVtx[g_nCntVtxNum].tex = D3DXVECTOR2(0.0f + (1.0 * nCntVtxX), 0.0f + (1.0 * nCntVtx));
+			pVtx[g_nCntVtxNum].tex = D3DXVECTOR2(0.0f + (1.0f * nCntVtxX), 0.0f + (1.0f * nCntVtx));
 
 			g_nCntVtxNum++;																//pVtxを一つ分次に進める
 		}
@@ -140,20 +143,23 @@ void UpdataMeshfield(void)
 
 	//画面表示の設定の変更
 	if (GetKeyboardTrigger(DIK_F1))
-	{
-		g_nDebugFlug = 1;
-	}
-	else if (GetKeyboardTrigger(DIK_F2))
-	{
-		g_nDebugFlug = 0;
+	{//F1キー押下で切り替え
+		if (g_nDebugFlug == 0)
+		{
+			g_nDebugFlug = 1;
+		}
+		else if (g_nDebugFlug == 1)
+		{
+			g_nDebugFlug = 0;
+		}
 	}
 
 	if (g_nDebugFlug == 1)
-	{
+	{//ワイヤーフレーム表示
 		pDevice->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
 	}
 	else if (g_nDebugFlug == 0)
-	{
+	{//通常の表示
 		pDevice->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 	}
 }

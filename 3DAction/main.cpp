@@ -1,6 +1,6 @@
 //===============================================================================================
 //
-//　　　　　　　　　　　　　　　　	 3DAction
+//　　　　　　　　　　　　　　　　	 3DGame
 //　　　　　　　　　　　　　　　　Author:越本愛彪
 //
 //===============================================================================================
@@ -22,7 +22,7 @@
 
 //マクロ定義
 #define CLASS_NAME		 "WindowsClass"								//ウィンドウクラスの名前
-#define Window_NAME		 "2Daction"									//ウィンドウの名前
+#define Window_NAME		 "3DGame"									//ウィンドウの名前
 
 //プロトタイプ宣言
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);

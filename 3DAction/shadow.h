@@ -1,5 +1,8 @@
 //========================================================
+//
 //							影
+//					AUTHOR:越本愛彪
+//
 //========================================================
 #ifndef _SHADOW_H_
 #define _SHADOW_H_
@@ -9,10 +12,10 @@
 //影の構造体
 typedef struct
 {
-	D3DXVECTOR3 pos;
-	D3DXVECTOR3 rot;
-	D3DXMATRIX mtxWorld;
-	bool bUse;
+	D3DXVECTOR3 pos;										//位置
+	D3DXVECTOR3 rot;										//向き
+	D3DXMATRIX mtxWorld;									//ワールドマトリックス
+	bool bUse;												//使っているかどうか
 } Shadow;
 
 //プロトタイプ宣言

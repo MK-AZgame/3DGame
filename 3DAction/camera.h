@@ -1,5 +1,8 @@
 //========================================================
+//
 //						カメラ
+//					AUTHOR:越本愛彪
+//
 //========================================================
 #ifndef _CAMERA_H_
 #define _CAMERA_H_
@@ -9,16 +12,16 @@
 //カメラ構造体
 typedef struct
 {
-	D3DXVECTOR3 posV;
-	D3DXVECTOR3 posR;
-	D3DXVECTOR3 posVDest;
-	D3DXVECTOR3 posRDest;
+	D3DXVECTOR3 posV;				//視点の位置
+	D3DXVECTOR3 posR;				//注視点の位置
+	D3DXVECTOR3 posVDest;			//視点の目的の位置
+	D3DXVECTOR3 posRDest;			//注視点の目的の位置
 	D3DXVECTOR3 vecU;
 	D3DXVECTOR3 rot;
 	D3DXVECTOR3 rotDest;
 	D3DXMATRIX  mtxProjection;
 	D3DXMATRIX  mtxView;
-	float fDistance;
+	float fDistance;				//距離
 } Camera;
 
 //プロトタイプ宣言
